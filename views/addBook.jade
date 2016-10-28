@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        title Add New Book
+        script(src="angular.min.js")
+        script(src="route.js")
+        script(src="main.js")
+        script(src="//code.jquery.com/jquery-1.10.2.min.js")
+        script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js")
+        link(rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css")
+        link(rel="stylesheet" type="text/css" href="default.css")
+    body
+        .container(ng-app="mainApp" ng-controller="mainController")
+            .row
+                .col-md-offset-2.col-md-8
+                    .row
+                        input(ng-model="searchContent",ng-change="search('author')")
+                        div(ng-view="")

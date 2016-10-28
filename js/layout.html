@@ -1,0 +1,45 @@
+<form class="form-horizontal" action="/saveBook" method="post">
+    <div class="form-group">
+        <label class="control-label col-md-4"> ISBN </label>
+        <div class="col-md-8">
+            <input class="form-control" ng-model="book.isbn" placeholder="ISBN" name="isbn"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-4"> Book Title</label>
+        <div class="col-md-8">
+            <input class="form-control" ng-model="book.title" placeholder="Book Title" name="title"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-4"> Book Author </label>
+        <div class="col-md-8">
+            <input class="form-control" ng-model="book.author" placeholder="Book Author" name="author"/>
+        </div>
+    </div>
+    <div class="form-group">   
+        <label class="control-label col-md-4"> Book Price</label>
+        <div class="col-md-8">
+            <input class="form-control" ng-model="book.price" placeholder="Book Price" name="price"/>
+        </div>
+    </div>
+    <div class="form-group">    
+        <label class="control-label col-md-4"> Available on</label>
+        <div class="col-md-8">
+            <textArea class="form-control" ng-model="book.avail" type="text" name="avail"></textArea>
+        </div>
+    </div>    
+        <input ng-model="book.bookId" type="hidden" name="bookId"/>
+        <input ng-model="book.authorId" type="hidden" name="authorId"/>
+    <div class="form-group">    
+        <div class="col-md-offset-4 col-md-8">
+            <input class="btn btn-primary" type="submit" value="Add New Book"/>
+        </div>
+    </div>
+</form>
+
+<ul>
+    <li ng-repeat="i in  bookList">
+        <div ng-click="assignAuthor(i.authorName,i.authorId)">{{i.authorName}}</div>
+    </li>
+</ul>
